@@ -10,18 +10,13 @@ class FireMissilesDialogFragment : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
-            // Builderクラスを使用して、ダイアログを簡単に構築する
             val builder = AlertDialog.Builder(it)
-            builder.setMessage("text")
-                .setPositiveButton("ok",
-                    DialogInterface.OnClickListener { dialog, id ->
-                        // FIRE ZE MISSILES!
+            val array = arrayOf("佐藤", "鈴木", "井上")
+            builder.setTitle("title")
+                .setItems(array,
+                    DialogInterface.OnClickListener { dialog, which ->
+                        // 'which'引数には、選択したアイテムのインデックス位置が含まれています
                     })
-                .setNegativeButton("cancel",
-                    DialogInterface.OnClickListener { dialog, id ->
-                        // User cancelled the dialog
-                    })
-            // AlertDialogオブジェクトを作成して返す
             builder.create()
         } ?: throw IllegalStateException("Activity cannot be null")
     }

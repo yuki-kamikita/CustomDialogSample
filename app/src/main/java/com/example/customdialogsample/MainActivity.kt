@@ -20,3 +20,5 @@ class MainActivity : AppCompatActivity() {
         newFragment.show(supportFragmentManager, "missiles")
     }
 }
+
+// 出典：https://developer.android.com/guide/topics/ui/dialogs?hl=ja
