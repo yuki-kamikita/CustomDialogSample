@@ -26,9 +26,13 @@ class MainActivity : AppCompatActivity(),
     // ダイアログフラグメントは、Fragment.onAttach（）コールバックを通じてこのアクティビティへの参照を受け取ります。
     // このコールバックは、NoticeDialogFragment.NoticeDialogListenerインターフェースで定義された
     // 次のメソッドを呼び出すために使用します。
-    override fun onDialogPositiveClick(dialog: DialogFragment, selectedItems: ArrayList<Int>) {
+    override fun onDialogPositiveClick(dialog: DialogFragment, selectedItem: Map<Int,String>) {
         // ユーザーがダイアログの正のボタンに触れた
-        textView.text = selectedItems.toString()
+        var text: String = ""
+        selectedItem.forEach {
+            text += "\n ID：" + it.key + "　Name：" + it.value
+        }
+        textView.text = text
     }
 
     override fun onDialogNegativeClick(dialog: DialogFragment) {
