@@ -1,5 +1,6 @@
 # CustomDialogSample
 CustomDialogじゃなくてDialogFragmentだなこれ
+
 ブランチに
 ・普通のダイアログ
 ・List型
