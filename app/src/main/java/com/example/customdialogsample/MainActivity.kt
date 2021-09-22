@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity(),
             showNoticeDialog()
         }
 
+        buttonCustomDialog.setOnClickListener {
+            CustomDialogFragment().show(supportFragmentManager, "CustomDialogFragment")
+        }
+
     }
 
     fun showNoticeDialog() {
